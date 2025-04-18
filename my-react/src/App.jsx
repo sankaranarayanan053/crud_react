@@ -6,11 +6,11 @@ import "./App.css";
 const App = () => {
   const [employees, setEmployees] = useState([]);
   const [editingEmployee, setEditingEmployee] = useState(null);
-  
+  const [idCounter, setIdCounter] = useState(1);
 
   const addEmployee = (employee) => {
-    setEmployees([...employees,{ ...employee, id: Date.now() }]);
-    
+    setEmployees([...employees, { ...employee, id: idCounter }]);
+    setIdCounter(idCounter + 1);
   };
 
   const deleteEmployee = (id) => {
