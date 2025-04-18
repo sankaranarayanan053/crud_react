@@ -1,4 +1,4 @@
-import React, { useEffect,useState } from "react";
+import React, { useEffect, useState } from "react";
 
 const EmployeeForm = ({ addEmployee, editingEmployee, updateEmployee }) => {
   const [name, setName] = useState("");
@@ -14,7 +14,7 @@ const EmployeeForm = ({ addEmployee, editingEmployee, updateEmployee }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (!name.trim() || !role.trim()) return;
+    if (!name || !role) return;
 
     const newEmployee = {
       name: name,
@@ -67,7 +67,7 @@ const EmployeeForm = ({ addEmployee, editingEmployee, updateEmployee }) => {
           cursor: "pointer",
         }}
       >
-        {editingEmployee? 'update': 'add'} Employee
+        {editingEmployee ? "Update Employee" : "Add Employee" }
       </button>
     </form>
   );
